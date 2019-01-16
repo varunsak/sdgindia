@@ -1,0 +1,34 @@
+{% extends 'portdata/base.html' %}
+
+{% block content %}
+<form method="POST" action="{% url 'upload' %}" enctype="multipart/form-data">{% csrf_token %}
+    <label for="uploadfiles">Upload: </label>
+    <input id="uploadfiles" type="file" , name="uploadfiles"/>
+    <input type="submit" value="Upload"/>
+</form>
+
+
+<table id="datatable" class="table table-striped table-bordered" data-server-side="true" data-ajax="/api/data/?format=datatables">
+    <thead>
+        <tr>
+            <th data-data="product">Product</th>
+            <th data-data="quantity">Quantity</th>
+            <th data-data="unit">Unit</th>
+            <th data-data="item_rate_inv">ITEM_RATE_INV</th>
+            <th data-data="currency">Currency</th>
+            <th data-data="total_amount">Total_Amount_INV_FC</th>
+            <th data-data="fob_inr">FOB INR</th>
+            <th data-data="item_rate_inr">ITEM RATE INR</th>
+            <th data-data="fob_usd">FOB USD</th>
+            <th data-data="foreign_port">Foreign Port</th>
+            <th data-data="foreign_country">Foreign Country</th>
+            <th data-data="india_port">Indian Port</th>
+            <th data-data="india_company">Indian Company</th>
+            <th data-data="foreign_company">Foreign Company</th>
+            <th data-data="invoice_number">INVOICE_NO</th>
+            <th data-data="hs_code">Hs Code</th>
+        </tr>
+    </thead>
+</table>
+
+{% endblock %}
