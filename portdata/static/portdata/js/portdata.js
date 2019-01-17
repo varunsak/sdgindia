@@ -12,10 +12,9 @@ $(document).ready( function () {
         $( 'input', this.footer() ).on( 'keyup change', function () {
             if ( that.search() !== this.value ) {
                 that
-                    .search( this.value )
+                    .search( this.value, false, true )
                     .draw();
             }
         } );
     } );
 } );
-
