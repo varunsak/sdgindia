@@ -1,3 +1,4 @@
 from django.contrib import admin
 
-# Register your models here.
+admin.site.site_header = 'Port Data Administration'
+admin.site.site_title = 'Port Data Administration'
