@@ -37,7 +37,6 @@ def upload(request):
                         invoice_number=row[14],
                         hs_code=row[15],
                     )
-                    print(created)
             except:
                 messages.add_message(request, messages.ERROR, 'Error importing file ' + f.name + '. Skipping this.')
         messages.add_message(request, messages.SUCCESS, 'Data imported.')
